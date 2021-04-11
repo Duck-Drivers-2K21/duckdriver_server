@@ -10,7 +10,7 @@ app = Flask(__name__)
 cors = CORS(app)
 app.wsgi_app = socketio.WSGIApp(sio, app.wsgi_app)
 queue = []
-turn_length = 5
+turn_length = 20
 
 
 @sio.on('connect')
