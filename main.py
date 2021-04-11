@@ -59,7 +59,7 @@ def move(sid, data):
 
 @sio.on("quack")
 def quack(sid, data):
-    print(quack)
+    print("quack")
     sio.emit('quack', {})
 
 
