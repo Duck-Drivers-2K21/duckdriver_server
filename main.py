@@ -39,7 +39,6 @@ def next_person():
     queue.append(person)
     print(queue)
 
-
     sio.emit('queue', {"queue": queue})
     t = Timer(turn_length, next_person)
     t.start()
@@ -56,6 +55,12 @@ def move(sid, data):
         sio.emit('move', data)
     else:
         print("Denied.")
+
+
+@sio.on("quack")
+def quack(sid, data):
+    print(quack)
+    sio.emit('quack', {})
 
 
 @sio.on('ignoreme')
